@@ -1,10 +1,4 @@
-function getFirstSelector(selector) {
-    return document.querySelector(selector)
-}
 
-function nestedTarget() {
-    return getFirstSelector('#nested .target')
-}
 
 function deepestChild() {
 
@@ -15,14 +9,8 @@ function deepestChild() {
     while (deepestNode) {
         lis = deepestNode
         deepestNode = lis.children[0]
+        console.log(deepestNode.constructor)
     }
     return lis
 }
 
-function increaseRankBy(n) {
-  var lis=document.getElementById("app").querySelectorAll("ul.ranked-list li");
-  for(let i=0;i<lis.length;i++) {
-    console.log(lis[i])
-    lis[i].innerHTML=parseInt(lis[i].innerHTML)+n;
-  }
-}
